@@ -1,17 +1,39 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import "./App.css";
 
 const PRODUCT_NAME = "Wireless Mouse";
 const PRODUCT_PRICE = 499;
+=======
+import "./App.css";
+
+const student1 = {
+  name: "Anu",
+  department: "CSE",
+  year: "3rd Year",
+};
+
+const student2 = {
+  name: "Bala",
+  department: "Computer Science",
+  year: "3rd Year",
+};
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
 
 function Header() {
   return (
     <header className="header">
+<<<<<<< HEAD
       <h1>Amazon Product Store</h1>
+=======
+      <h1>Student Management System</h1>
+      <p>Student Profile Management</p>
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
     </header>
   );
 }
 
+<<<<<<< HEAD
 function ProductCard({
   productName,
   price,
@@ -64,18 +86,38 @@ function ProductCard({
         </p>
       </div>
     </section>
+=======
+function StudentProfile({ name, department, year }) {
+  return (
+    <div className="student-profile">
+      <h2>{name}</h2>
+
+      <p>
+        <strong>Department:</strong> {department}
+      </p>
+
+      <p>
+        <strong>Year:</strong> {year}
+      </p>
+    </div>
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
   );
 }
 
 function Footer() {
   return (
     <footer className="footer">
+<<<<<<< HEAD
       © 2026 Amazon Product Store
+=======
+      © 2026 Student Management System
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
     </footer>
   );
 }
 
 function App() {
+<<<<<<< HEAD
   const [quantity, setQuantity] = useState(0);
   const [selectedColor, setSelectedColor] = useState("Black");
   const [deliveryCity, setDeliveryCity] = useState("Coimbatore");
@@ -93,10 +135,13 @@ function App() {
     setQuantity(0);
   }
 
+=======
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
   return (
     <div className="app">
       <Header />
 
+<<<<<<< HEAD
       <div className="tab-title">
         Tab title: {PRODUCT_NAME} | {selectedColor} | Cart: {quantity}
       </div>
@@ -151,6 +196,28 @@ function App() {
             {showProduct ? "Hide Product" : "Show Product"}
           </button>
         </div>
+=======
+      <main className="content">
+        <section>
+          <h2 className="student-title">Student 1</h2>
+
+          <StudentProfile
+            name={student1.name}
+            department={student1.department}
+            year={student1.year}
+          />
+        </section>
+
+        <section>
+          <h2 className="student-title">Student 2</h2>
+
+          <StudentProfile
+            name={student2.name}
+            department={student2.department}
+            year={student2.year}
+          />
+        </section>
+>>>>>>> fa71d2575d03d37773d1fa5804e08bd0d473200c
       </main>
 
       <Footer />
