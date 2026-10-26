@@ -1,44 +1,67 @@
-# MERN
+# Student Internship Portal
 
-This is a simple NodeJS + Express + React + MongoDB application. This application serves as a basic template for a mern applications.
+A MERN stack application that displays available internships, lets students view role details, and submit applications with validation.
 
-What does this application do?
--------------------------------
-This application serves a simple MERN based TODO application to demonstrate the use of MERN stack. This application uses following technologies:
-- MongoDB: used as database
-- Express: used as web application framework
-- React: used as frontend framework to build UI
-- NodeJS: used as backend server
+## Tech Stack
+- MongoDB
+- Express.js
+- React
+- Node.js
 
+## Project Structure
+- `index.js` - Express server and MongoDB connection
+- `routes/api.js` - REST API endpoints
+- `models/Application.js` - Mongoose schema
+- `client/` - React frontend
 
-## How to run
+## Environment Variables
+Create a `.env` file in the project root:
 
-Before running the application, make sure all dependencies are installed. 
+```env
+MONGO_DB_URI=mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/<DATABASE_NAME>
+PORT=5000
+```
 
-1. Install server & client dependencies, run following command in terminal:
-   > `npm install; cd client && npm install && cd ..`
+For the frontend, set this environment variable when deploying:
 
-2. Run following command to start both server and client:
-   > `npm run dev`
+```env
+VITE_API_URL=https://your-backend-url.com
+```
 
-3. Refresh the URL in simple browser to see the output.
+## Installation
 
+```bash
+npm install
+npm run setup
+```
 
+## Run Locally
 
-## FAQs & Debugging
+```bash
+npm run dev
+```
 
-### 1. Node server failing to connect to Database
+- Frontend: http://localhost:5173
+- Backend: http://localhost:5000
 
-   Ensure Mongo_DB_URI is set in .env file. If not, create a new file named `.env` in root directory and add following line:
-   > `MONGO_DB_URI=<YOUR_MONGO_DB_URI>`
+## API Endpoints
+- `GET /api/health`
+- `GET /api/internships`
+- `GET /api/internships/:id`
+- `GET /api/applications`
+- `POST /api/applications`
 
-   Once the studio is connected to your workspace, `MONGO_DB_URI` should be automatically set in your `.env` file.
+## Git Workflow
 
-   Alternatively, you can create `MONGO_DB_URI` using value present in the file **.vscode/.studio/studio-env.json**.
-   MONGO_DB_URI typically looks like this:
-> `mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/<DATABASE_NAME>`
+```bash
+git checkout -b rollno_v1
+git add .
+git commit -m "Develop Student Internship Portal"
+git checkout main
+git merge rollno_v1
+git push origin main
+```
 
-### 2. Can I start server and client separately?   
-   `npm run dev` starts both server and client. If you want to start them separately, you can use following commands:
-   - `npm run server`: to start server
-   - `npm run client`: to start client
+## Deployment
+- Frontend: deploy the `client` folder to Vercel and set `VITE_API_URL`.
+- Backend: deploy the Node.js server to Render, Railway, or another Node hosting platform and set `MONGO_DB_URI` and `PORT`.
